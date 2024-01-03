@@ -488,6 +488,10 @@ class NavigationToolbar2Wasm(NavigationToolbar2):
 
 
 class TimerWasm(TimerBase):
+    def __init__(self, parent, *args, **kwargs):        
+        self._timer = None
+        super().__init__(*args, **kwargs)
+        
     def _timer_start(self):
         self._timer_stop()
         if self._single:
